@@ -51,4 +51,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions, feedback, or need guidance, feel free to reach out to me directly on LinkedIn or via email. Let’s grow together!
 
-[LinkedIn Profile Link] (www.linkedin.com/in/sri-gudibandi)
+[www.linkedin.com/in/sri-gudibandi]
