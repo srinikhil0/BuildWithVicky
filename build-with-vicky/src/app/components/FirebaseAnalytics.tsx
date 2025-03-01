@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { analytics } from "../firebase/config";
 import { logEvent } from "firebase/analytics";
 
-export default function FirebaseAnalytics() {
+// This component uses the hooks that require suspense
+function AnalyticsTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -39,4 +40,13 @@ export default function FirebaseAnalytics() {
   }, [pathname, searchParams]);
 
   return null; // This component doesn't render anything
+}
+
+// Main component that wraps the tracker in a suspense boundary
+export default function FirebaseAnalytics() {
+  return (
+    <Suspense fallback={null}>
+      <AnalyticsTracker />
+    </Suspense>
+  );
 } 
